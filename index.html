@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Graphify</title>
+</head>
+<body>
+    
+    <div class="container">
+        <h2>My Graph Data</h2>
+
+        <div class="graph_container">
+            <canvas id="myChart" style="width:100%; max-width:700px"></canvas>
+        </div>
+
+        <div class="input-part">
+            <input type="text" id="text_input" placeholder="Item Name here (eg.Apple)"><br>
+            <input type="number" id="num_input" placeholder="Enter values"><br>
+            <select  id="type_chart">
+                <option value="">Select chart type</option>
+                <option value="bar">Bar</option>
+                <option value="pie">Pie</option>
+                <option value="doughnut">Doughtnut</option>
+            </select>
+            <br>
+            <button onclick="take_data()">Submit</button>
+        </div>
+
+        <div class="file_upload_zaga">
+            <label>Upload a CSV file</label>
+            <input type="file" id="csv_file" accept=".csv">
+            <button onclick="control_CSV()">Generate a graph from file</button>
+        </div>
+
+    </div>
+
+    <div class="take_it_by_pdf">
+
+    </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="app.js"></script>
+</body>
+</html>
