@@ -8,18 +8,28 @@
     <title>Graphify</title>
 </head>
 <body>
+
+    <div class="upper_section">
+        <h2 class="title_main">Graphify</h2>
+        <nav>
+            <button id="dark_mode_change_btn" onclick="dark_mode_btn()">Dark Mode</button>
+        </nav>
+    </div>
     
     <div class="container">
         <h2>My Graph Data</h2>
 
+
         <div class="graph_container">
-            <canvas id="myChart" style="width:100%; max-width:700px"></canvas>
+            <canvas id="Maza_Chart" style="width:100%; max-width:700px"></canvas>
         </div>
+
+
 
         <div class="input-part">
             <input type="text" id="text_input" placeholder="Item Name here (eg.Apple)"><br>
             <input type="number" id="num_input" placeholder="Enter values"><br>
-            <select  id="type_chart">
+            <select  id="type_chart" onchange="change_chart_type()">
                 <option value="">Select chart type</option>
                 <option value="bar">Bar</option>
                 <option value="pie">Pie</option>
@@ -27,19 +37,56 @@
             </select>
             <br>
             <button onclick="take_data()">Submit</button>
+            <br>
+            <button onclick="Change_rang_to_takta('random')">Change Colour</button>
+            <br>
+            <button onclick="clean_graph()">Clear Graph Contents</button>
         </div>
+
 
         <div class="file_upload_zaga">
             <label>Upload a CSV file</label>
             <input type="file" id="csv_file" accept=".csv">
-            <button onclick="control_CSV()">Generate a graph from file</button>
+            <br>
+            <button onclick="control_CSV()" id="csv_input_btn">Generate a graph from file</button>
+        </div>
+
+    </div>
+    <hr>
+
+    <div class="take_it_by_pdf">
+        <label >Download PDF</label><br>
+        <button onclick="download_da_pdf()" id="pdf_download_button">Download</button>
+    </div>
+
+    <hr>
+    <div class="templates">
+        <div class="text_contenct">
+            <p class="text_element">Select Templates</p>
+            <br>
+            <p class="summary">These templates are different color combination you would like</p>
+        </div>
+
+
+        <div class="space_for_something_else">
+            <div class="box1" onclick="Change_rang_to_takta('rainbow')">
+                <p class="head">Rainbow Theme 🌈</p>
+                <p class="discription"> Bright and vibrant colors across the spectrum. Great for fun, creative, and eye-catching charts.</p>
+            </div>
+            <div class="box2" onclick="Change_rang_to_takta('blue_theme')">
+                <p class="head">Cool Blue Theme 🌊</p>
+                <p class="discription">Calm and professional shades of blue. Perfect for reports, analytics, and clean dashboards.</p>
+            </div>
+            <div class="box3" onclick="Change_rang_to_takta('warm')">
+                <p class="head">Sunset ☀️</p>
+                <p class="discription">Warm reds, oranges, and yellows inspired by sunsets. Ideal for highlighting important data.</p>
+            </div>
         </div>
 
     </div>
 
-    <div class="take_it_by_pdf">
 
-    </div>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>

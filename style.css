@@ -5,9 +5,18 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
+:root{
+    --main-color: black;
+    --secondary-color: #adf;
+    --button-background: red;
+    --button-color: blue;
+    --hover_color: yellow;
+}
+
 body{
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: white;
@@ -31,11 +40,72 @@ body{
 }
 
 .input-part{
-    width: 100%;
+    width: 500px;
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
+
+.upper_section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 900px;
+    margin: 20px 0;
+}
+
+nav{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+
+nav a:hover{
+    color: rgb(255, 93, 93);
+}
+
+nav button{
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid grey;
+    background-color: white;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+nav button:hover{
+    background-color: rgb(180, 180, 180);
+    color: rgb(225,93,93);
+}
+
+
+
+
+@keyframes shaky_shaky_dance {
+    0%{transform: translate(0);}
+    20%{transform: translate(-10px);}
+    50%{transform: translate(0);}
+    80%{transform: translate(10px);}
+    100%{transform: translate(0);}
+}
+
+.shaky_shaky_dance{
+    animation: shake 0.75s;
+    border: 2px solid red;
+    color: crimson;
+}
+
+
 
 .input-part input,
 .input-part select,
@@ -46,6 +116,7 @@ body{
     border: 1px solid grey;
     border-radius: 9px;
     outline: none;    
+    margin: auto 0px;
 }
 
 .input-part button{
@@ -54,10 +125,14 @@ body{
     cursor: pointer;
     font-weight: bold;
     border: 1px solid grey;
+    transition: 0.3s;
 }
 
 .input-part button:hover{
-    background-color: grey;
+    width: 89%;
+    color: rgb(255, 93, 93);
+    background-color: rgb(180, 180, 180);
+    transform: scale(1.05);
 }
 
 canvas{
@@ -65,6 +140,179 @@ canvas{
     height: 100% !important;
 }
 
+canvas#Maza_Chart{
+    background-color: white;
+}
+
+.file_upload_zaga{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+.file_upload_zaga label{
+    font-size: 25px;
+    text-decoration: underline;
+}
+
+.file_upload_zaga input{
+    font-size: 16px;
+    background-color: rgb(179, 179, 179);
+    border: 1 px solid rgb(224, 0, 0);
+    border-radius: 5px;
+}
+
+.file_upload_zaga button{
+    border: 1px solid rgb(159, 159, 159);
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    font-weight: 500;
+    color: rgb(182, 81, 81);
+    padding: 7px;
+    margin: 0px 23px;
+    font-size: 17px;
+    transition: 0.5s;
+}
+
+.file_upload_zaga button:hover{
+    font-size: 18px;
+    background-color: rgb(180, 180, 180);
+    color: rgb(255, 93, 93);
+    transform: scale(1.05);
+}
+
+.take_it_by_pdf{
+    display: flex;
+    font-family: 'Times New Roman', Times, serif;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+}
+
+.take_it_by_pdf label{
+    
+    font-weight: bolder;
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.take_it_by_pdf button{
+    background-color: white;
+    border: 1px solid rgb(137, 137, 137);
+    color: rgb(182, 81, 81);
+    border-radius: 8px;
+    padding: 6px;
+    font-size: larger;
+    margin: 0px 20px;
+    transition: 0.3s;
+}
+
+.take_it_by_pdf button:hover{
+    background-color: rgb(180, 180, 180);
+    color: rgb(255, 93, 93);
+    transform: scale(1.1);
+}
+
+hr{
+    background-color: grey;
+    width: 50%;
+    border: 1px solid grey;
+    border-radius: 2px;
+}
+
+.space_for_something_else{
+    height: 400px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.templates{
+    height: 500px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.text_element{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    font-size: 30px;
+}
 
 
+
+
+.box1,.box2,.box3{
+    display: flex;
+    flex-direction: column;
+    padding: 15px 5px 10px 5px;
+    font-size: 18px;
+    height: 300px;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 12px;
+    width: 250px;
+    transition: 0.3s;
+    gap: 80px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.discription{
+    display: none;
+}
+
+.box1:hover{
+    font-size: 20px;
+    height: 320px;
+    width: 270px;
+    font-weight: bolder;
+
+}
+.box2:hover{
+    font-size: 20px;
+    height: 320px;
+    width: 270px;
+    font-weight: bolder;
+}
+.box3:hover{
+    font-size: 20px;
+    height: 320px;
+    width: 270px;
+    font-weight: bolder;
+}
+
+.box1:hover .discription, .box2:hover .discription, .box3:hover .discription{
+    font-weight: 500;
+    font-size: 18px;
+    display: block;
+}
+
+.box1{
+    color: white;
+    background: linear-gradient(to bottom right, violet, indigo, blue, green, yellow, orange, red);
+}
+
+.box2{
+    color: white;
+    background: linear-gradient(to bottom right,#003f5c, #2f4b7c, #665191, #a05195, #d45087 );
+}
+
+.box3{
+    color: white;
+    background: linear-gradient(to bottom right, #ff9a8b, #ff6a88, #ff99ac, #fcb69f);
+}
+
+
+
+
+/* */
+/*  */
 
