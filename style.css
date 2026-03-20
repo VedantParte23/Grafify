@@ -4,13 +4,25 @@
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
 }
-
 :root{
-    --main-color: black;
-    --secondary-color: #adf;
-    --button-background: red;
-    --button-color: blue;
-    --hover_color: yellow;
+    --color_black: black;
+    --color_hover_red: rgb(255,93,93);
+    --color_red: red;
+
+    --border: rgb(137, 137, 137);
+    --background-color: white;
+
+    --hover-background-color: rgb(41, 41, 41);
+}
+
+body.dark-theme{
+    --color_black: rgb(136, 37, 37);
+    --background-color: rgb(19, 19, 19);
+    --border: rgb(69, 69, 69);
+
+    --hover-background-color: rgb(42, 42, 42);
+    --color_hover_red : rgb(255, 123, 123);
+
 }
 
 body{
@@ -19,13 +31,13 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: white;
+    background: var(--background-color);
 }
 
 .container{
     width: 90%;
     max-width: 900px;
-    background: white;
+    background: var(--background-color);
     padding: 20px;   
     display: flex;
     flex-direction: column;
@@ -63,29 +75,29 @@ nav{
 
 nav a{
     text-decoration: none;
-    color: black;
+    color: var(--color_black);
     font-weight: 500;
     transition: 0.3s;
 }
 
 
 nav a:hover{
-    color: rgb(255, 93, 93);
+    color: var(--color_hover_red);
 }
 
 nav button{
     padding: 6px 12px;
     border-radius: 6px;
-    border: 1px solid grey;
-    background-color: white;
+    border: 1px solid var(--border);
+    background-color: var(--background-color);
     cursor: pointer;
     font-weight: 500;
     transition: 0.3s;
 }
 
 nav button:hover{
-    background-color: rgb(180, 180, 180);
-    color: rgb(225,93,93);
+    background-color: var(--hover-background-color);
+    color: var(--color_hover_red);
 }
 
 
@@ -101,8 +113,8 @@ nav button:hover{
 
 .shaky_shaky_dance{
     animation: shake 0.75s;
-    border: 2px solid red;
-    color: crimson;
+    border: 2px solid var(--color_red);
+    color: var(--color_red);
 }
 
 
@@ -113,25 +125,25 @@ nav button:hover{
     width: 87%;
     padding: 11px;
     font-size: 16px;
-    border: 1px solid grey;
+    border: 1px solid var(--border);
     border-radius: 9px;
     outline: none;    
     margin: auto 0px;
 }
 
 .input-part button{
-    background-color: white;
-    color: rgb(182, 81, 81);
+    background-color: var(--background-color);
+    color: var(--color_hover_red);
     cursor: pointer;
     font-weight: bold;
-    border: 1px solid grey;
+    border: 1px solid var(--border);
     transition: 0.3s;
 }
 
 .input-part button:hover{
     width: 89%;
-    color: rgb(255, 93, 93);
-    background-color: rgb(180, 180, 180);
+    color: var(--color_hover_red);
+    background-color: var(--hover-background-color);
     transform: scale(1.05);
 }
 
@@ -141,7 +153,7 @@ canvas{
 }
 
 canvas#Maza_Chart{
-    background-color: white;
+    background-color: var(--background-color);
 }
 
 .file_upload_zaga{
@@ -160,18 +172,18 @@ canvas#Maza_Chart{
 
 .file_upload_zaga input{
     font-size: 16px;
-    background-color: rgb(179, 179, 179);
-    border: 1 px solid rgb(224, 0, 0);
+    background-color: var(--background-color);
+    border: 1px solid var(--color_red);
     border-radius: 5px;
 }
 
 .file_upload_zaga button{
     border: 1px solid rgb(159, 159, 159);
     border-radius: 8px;
-    background-color: white;
+    background-color: var(--background-color);
     cursor: pointer;
     font-weight: 500;
-    color: rgb(182, 81, 81);
+    color: var(--color_hover_red);
     padding: 7px;
     margin: 0px 23px;
     font-size: 17px;
@@ -180,8 +192,8 @@ canvas#Maza_Chart{
 
 .file_upload_zaga button:hover{
     font-size: 18px;
-    background-color: rgb(180, 180, 180);
-    color: rgb(255, 93, 93);
+    background-color: var(--hover-background-color);
+    color: var(--color_hover_red);
     transform: scale(1.05);
 }
 
@@ -201,9 +213,9 @@ canvas#Maza_Chart{
 }
 
 .take_it_by_pdf button{
-    background-color: white;
+    background-color: var(--background-color);
     border: 1px solid rgb(137, 137, 137);
-    color: rgb(182, 81, 81);
+    color: var(--color_hover_red);
     border-radius: 8px;
     padding: 6px;
     font-size: larger;
@@ -212,15 +224,16 @@ canvas#Maza_Chart{
 }
 
 .take_it_by_pdf button:hover{
-    background-color: rgb(180, 180, 180);
-    color: rgb(255, 93, 93);
+    cursor: pointer;
+    background-color: var(--hover-background-color);
+    color: var(--color_hover_red);
     transform: scale(1.1);
 }
 
 hr{
-    background-color: grey;
+    background-color: var(--border);
     width: 50%;
-    border: 1px solid grey;
+    border: 1px solid var(--border);
     border-radius: 2px;
 }
 
@@ -255,7 +268,7 @@ hr{
     padding: 15px 5px 10px 5px;
     font-size: 18px;
     height: 300px;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid var(--color_black);
     border-radius: 12px;
     width: 250px;
     transition: 0.3s;
@@ -296,17 +309,17 @@ hr{
 }
 
 .box1{
-    color: white;
+    color: var(--background-color);
     background: linear-gradient(to bottom right, violet, indigo, blue, green, yellow, orange, red);
 }
 
 .box2{
-    color: white;
+    color: var(--background-color);
     background: linear-gradient(to bottom right,#003f5c, #2f4b7c, #665191, #a05195, #d45087 );
 }
 
 .box3{
-    color: white;
+    color: var(--background-color);
     background: linear-gradient(to bottom right, #ff9a8b, #ff6a88, #ff99ac, #fcb69f);
 }
 

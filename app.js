@@ -13,7 +13,6 @@ let Maza_Chart = new Chart(ctx,{
             label: "",
             backgroundColor: barColors,
             borderColor: barColors,
-            borderWidth: 1,
             data: yValues
         }]
     },
@@ -190,6 +189,13 @@ function Change_rang_to_takta(theme){
 
 const dark_btn = document.getElementById("dark_mode_change_btn");
 dark_btn.addEventListener('click',()=>{
-    document.body.classList.toggle('dark-mode')
+    document.body.classList.toggle('dark-theme')
+
+    if(document.body.classList.contains('dark-theme')){
+        dark_btn.textContent  ="Light_Mode"
+    }
+    else{
+        dark_btn.textContent = "Dark_Mode"
+    }
 })
 
