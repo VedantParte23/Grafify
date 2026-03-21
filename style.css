@@ -3,26 +3,30 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
+    color: var(--primary_text_color);
 }
 :root{
-    --color_black: black;
-    --color_hover_red: rgb(255,93,93);
-    --color_red: red;
+   --primary_text_color: rgb(0, 0, 0);
+   --secondary_text_color: rgb(176, 176, 176);
 
-    --border: rgb(137, 137, 137);
-    --background-color: white;
+    --background_color: white;
+    --container_background: white;
+    --border: rgb(221, 221, 221);
 
-    --hover-background-color: rgb(41, 41, 41);
+    --light_red: rgb(255, 93, 93);
+    --hover: rgb(240, 240, 240);
 }
 
 body.dark-theme{
-    --color_black: rgb(136, 37, 37);
-    --background-color: rgb(19, 19, 19);
-    --border: rgb(69, 69, 69);
+    --primary_text_color: rgb(224, 224, 224);
+   --secondary_text_color: rgb(176, 176, 176);
 
-    --hover-background-color: rgb(42, 42, 42);
-    --color_hover_red : rgb(255, 123, 123);
+    --background_color: black;
+    --container_background: rgb(30, 30, 30);
+    --border: rgb(51, 51, 51);
 
+    --light_red: rgb(255, 123, 123);
+    --hover: rgb(42, 42, 42);
 }
 
 body{
@@ -31,13 +35,13 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: var(--background-color);
+    background: var(--background_color);
 }
 
 .container{
     width: 90%;
     max-width: 900px;
-    background: var(--background-color);
+    background: var(--container_background);
     padding: 20px;   
     display: flex;
     flex-direction: column;
@@ -88,8 +92,9 @@ nav a:hover{
 nav button{
     padding: 6px 12px;
     border-radius: 6px;
+    color: var(--light_red);
     border: 1px solid var(--border);
-    background-color: var(--background-color);
+    background-color: var(--hover);
     cursor: pointer;
     font-weight: 500;
     transition: 0.3s;
@@ -126,14 +131,15 @@ nav button:hover{
     padding: 11px;
     font-size: 16px;
     border: 1px solid var(--border);
+    background-color: var(--container_background);
     border-radius: 9px;
     outline: none;    
     margin: auto 0px;
 }
 
 .input-part button{
-    background-color: var(--background-color);
-    color: var(--color_hover_red);
+    background-color: var(--background_color);
+    color: var(--light_red);
     cursor: pointer;
     font-weight: bold;
     border: 1px solid var(--border);
@@ -143,7 +149,7 @@ nav button:hover{
 .input-part button:hover{
     width: 89%;
     color: var(--color_hover_red);
-    background-color: var(--hover-background-color);
+    background-color: var(--color_hover_red);
     transform: scale(1.05);
 }
 
@@ -172,18 +178,18 @@ canvas#Maza_Chart{
 
 .file_upload_zaga input{
     font-size: 16px;
-    background-color: var(--background-color);
-    border: 1px solid var(--color_red);
+    background-color: var(--background_color);
+    border: 1px solid var(--border);
     border-radius: 5px;
 }
 
 .file_upload_zaga button{
     border: 1px solid rgb(159, 159, 159);
     border-radius: 8px;
-    background-color: var(--background-color);
+    background-color: var(--background_color);
     cursor: pointer;
     font-weight: 500;
-    color: var(--color_hover_red);
+    color: var(--color_red);
     padding: 7px;
     margin: 0px 23px;
     font-size: 17px;
@@ -206,14 +212,13 @@ canvas#Maza_Chart{
 }
 
 .take_it_by_pdf label{
-    
     font-weight: bolder;
     font-size: 30px;
     margin-bottom: 18px;
 }
 
 .take_it_by_pdf button{
-    background-color: var(--background-color);
+    background-color: var(--background_color);
     border: 1px solid rgb(137, 137, 137);
     color: var(--color_hover_red);
     border-radius: 8px;
@@ -225,7 +230,7 @@ canvas#Maza_Chart{
 
 .take_it_by_pdf button:hover{
     cursor: pointer;
-    background-color: var(--hover-background-color);
+    background-color: var(--color_hover_red);
     color: var(--color_hover_red);
     transform: scale(1.1);
 }
@@ -268,7 +273,7 @@ hr{
     padding: 15px 5px 10px 5px;
     font-size: 18px;
     height: 300px;
-    border: 1px solid var(--color_black);
+    border: 1px solid var(--border);
     border-radius: 12px;
     width: 250px;
     transition: 0.3s;
@@ -309,20 +314,19 @@ hr{
 }
 
 .box1{
-    color: var(--background-color);
+    color: var(--background_color);
     background: linear-gradient(to bottom right, violet, indigo, blue, green, yellow, orange, red);
 }
 
 .box2{
-    color: var(--background-color);
+    color: var(--background_color);
     background: linear-gradient(to bottom right,#003f5c, #2f4b7c, #665191, #a05195, #d45087 );
 }
 
 .box3{
-    color: var(--background-color);
+    color: var(--background_color);
     background: linear-gradient(to bottom right, #ff9a8b, #ff6a88, #ff99ac, #fcb69f);
 }
-
 
 
 
