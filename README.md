@@ -1,90 +1,35 @@
-# 📊 Graphify
+#  Graphify
+### Link to website 
+###### https://grafify-ved-hackgame.vercel.app/
+---
+This is a website i made for making graphs. I initially found that I need to make graphs for some of my college presentation stuff and I just thought why not make it ourselves, plus hackclub's game event was already going that boosted me for completing it. And thats it. It's just a simple website where you can enter values and make graph of different types. Can download it and change color randomly. 
+---
+## What can you do with this
 
-Graphify is a small web app I built to make creating graphs quick and actually enjoyable. Instead of dealing with complicated tools, you can just type in your data (or upload a file) and instantly see it turn into a chart.
+1. Manually add data for graph
+2. Upload a csv file(Only 2 rows with name and values)
+3. Download it
+4. Change color randomly or by 3 basic template 
 
 ---
-
-## ✨ What you can do with it
-
-* Create **bar, pie, and doughnut charts**
-* Add data manually in a few seconds
-* Upload a **CSV file** and generate a graph automatically
-* Play around with **colors and themes**
-* Switch between **light and dark mode**
-* **Download your chart as a PDF**
-* Clear everything and start fresh anytime
+## Tech stack 
+- Chart JS
+- PapaParse
+- jsPDF + html2canvas
 
 ---
+## Preview
+<img width="1000" height="700" alt="grafify_img" src="https://github.com/user-attachments/assets/81d14cc4-cbdb-4941-9b6e-f1a37d55201c" />
 
-## 🧪 How to use it
+## Project Structure
 
-### ➤ Add data manually
-
-Just type:
-
-* A name (like *Apple*)
-* A number (like *10*)
-* Pick a chart type
-
-Then hit **Submit** — your graph updates instantly.
-
+- Grafify/
+  - index.html/
+  - style.css/
+  - app.js/
+  - README.md
 ---
+## License 
+![License](https://img.shields.io/badge/license-MIT-green)
+Feel free to do what you want
 
-### ➤ Upload a CSV file
-
-If you already have data, upload a `.csv` file like this:
-
-```
-Apple,10
-Banana,15
-Mango,8
-```
-
-Click **Generate a graph from file** and you're done.
-
----
-
-### ➤ Change how it looks
-
-* Use **Change Colour** for random colors
-* Or pick a theme:
-
-  * 🌈 Rainbow (bright and fun)
-  * 🌊 Blue (clean and calm)
-  * ☀️ Sunset (warm tones)
-
----
-
-### ➤ Download your graph
-
-Once you're happy with it, click **Download** and save it as a PDF.
-
----
-
-## ⚙️ Behind the scenes
-
-Graphify uses:
-
-* **Chart.js** for drawing charts
-* **PapaParse** to read CSV files
-* **jsPDF + html2canvas** to export graphs
-
-Everything runs right in your browser.
-
----
-
-## 🎯 Why I made this
-
-I wanted something simple where I could just quickly visualize data without opening heavy software or writing a bunch of code. So this is basically that — fast, clean, and easy to use.
-
----
-
-## 📝 Small notes
-
-* Only numbers work for values (no text)
-* CSV files should have **2 columns (name, value)**
-* Graph updates happen instantly as you add data
-
----
-
-That’s it — open it up, add some data, and see your graph come to life 🚀
